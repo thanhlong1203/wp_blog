@@ -1,0 +1,437 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Manrope", sans-serif;
+}
+
+html {
+  margin-top: 0 !important;
+}
+
+.custom-title-blue {
+  font-family: 'Playfair Display', serif;
+  color: #065276;
+  font-weight: 600;
+}
+
+.custom-title-yellow {
+  font-family: 'Playfair Display', serif;
+  color: #C19240;
+}
+
+.font {
+  font-family: 'Playfair Display', serif;
+}
+
+.list-project a:nth-child(2) {
+  grid-row: span 2 / span 2;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-pagination-bullet {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  font-size: 15px;
+  color: #ffffff;
+  opacity: 1;
+  background: none;
+  margin: 0 25px !important;
+  font-weight: bold;
+}
+
+.swiper-pagination-bullet-active {
+  color: #fff;
+  background: none;
+  text-decoration: underline;
+}
+
+/* end custom slider */
+.strong-img {
+  object-fit: contain !important;
+}
+
+#header-menu {
+  @apply flex text-black text-[15px] flex-col lg:flex-row mt-[50px] lg:mt-0
+}
+
+#header-menu .current-menu-item a {
+  @apply text-[#C19240]
+}
+
+#header-menu>li {
+  @apply relative flex lg:items-center justify-between px-[14px] flex-col lg:flex-row items-start
+}
+
+#header-menu>li>a {
+  @apply h-full font-semibold hover:text-[#C19240] text-black transition-[0.5s]
+}
+
+#header-menu>li .sub-menu {
+  @apply lg:absolute top-[70px] left-0 leading-[40px] bg-white rounded-sm hidden z-[2] text-[black] w-[200px] pl-[10px] lg:p-[20px] static
+}
+
+#header-menu>li:hover .sub-menu {
+  @apply block
+}
+
+#header-menu .sub-menu li:hover a {
+  @apply text-[#C19240] transition-[0.5s]
+}
+
+#header-menu .sub-menu li:hover:after {
+  @apply text-[#7C858C] block
+}
+
+#header-menu .sub-menu li a {
+  @apply text-[#7C858C] block
+}
+
+.list-aboutus>div:nth-child(odd) {
+  @apply lg:flex-row-reverse
+}
+
+.menu-item-has-children>a::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 600;
+  content: "\f078";
+  margin-left: 5px;
+  font-size: 10px;
+}
+
+.filter-bar form>ul {
+  @apply grid lg:grid-cols-5 grid-cols-1 md:grid-cols-2 gap-4
+}
+
+.filter-bar input[type="submit"] {
+  @apply bg-[#C19240] w-full rounded-md py-[10px] text-white cursor-pointer
+}
+
+.filter-bar input[type="text"] {
+  @apply bg-[#F7F7F7] w-full rounded-md py-[10px] outline-none px-2
+}
+
+.filter-bar label {
+  @apply w-full h-full
+}
+
+.filter-bar select {
+  @apply bg-[#F7F7F7] rounded-md py-[10px] outline-none px-2 w-full h-full
+}
+
+.search-filter-results {
+  @apply grid lg:grid-cols-3 gap-[3rem] md:grid-cols-2 grid-cols-1
+}
+
+.search-filter-reset {
+  @apply !bg-slate-300
+}
+
+.pagination-project {
+  @apply md:col-span-3 m-auto col-span-1
+}
+
+.pagination-wrap ul li {
+  @apply bg-[#bdbdbd] h-[30px] text-white w-[30px] rounded-full block text-center leading-[30px] mx-1
+}
+
+.pagination-wrap ul {
+  @apply flex items-center
+}
+
+.active {
+  @apply !bg-[#C19240]
+}
+
+#menu-menu-language li a {
+  @apply flex items-center
+}
+
+#menu-menu-language li a img {
+  @apply mr-3
+}
+
+.card-project {
+  box-shadow: 0 7px 35px 0 rgba(0, 0, 0, .07)
+}
+
+.footer-title .footer-item {
+  @apply font
+}
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 9999;
+  background: #ffffff url(http://vntinvestgroup.com/wp-content/uploads/2023/11/Sequence-01_1.gif) no-repeat center center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20%;
+}
+
+.show1 {
+  display: none !important;
+}
+
+.links li:hover .htmlcss-arrow,
+.links li:hover .js-arrow {
+  transform: rotate(180deg);
+}
+
+nav .navbar .links li .arrow {
+  /* background: red; */
+  height: 100%;
+  width: 22px;
+  line-height: 70px;
+  text-align: center;
+  display: inline-block;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+
+nav .navbar .links li:hover .htmlCss-sub-menu,
+nav .navbar .links li:hover .js-sub-menu {
+  display: block;
+}
+
+.navbar .links li .sub-menu li {
+  padding: 0 22px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar .links li .sub-menu .more-arrow {
+  line-height: 40px;
+}
+
+.navbar .links li .sub-menu .more-sub-menu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  border-radius: 0 4px 4px 4px;
+  z-index: 1;
+  display: none;
+}
+
+.links li .sub-menu .more:hover .more-sub-menu {
+  display: block;
+}
+
+.navbar .search-box {
+  position: relative;
+  height: 40px;
+  width: 40px;
+}
+
+.navbar .search-box i {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  line-height: 40px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.navbar .search-box .input-box {
+  position: absolute;
+  right: calc(100% - 40px);
+  top: 80px;
+  height: 60px;
+  width: 300px;
+  background: #C19240;
+  border-radius: 6px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease;
+}
+
+.navbar.showInput .search-box .input-box {
+  top: 65px;
+  opacity: 1;
+  pointer-events: auto;
+  background: #C19240;
+}
+
+.search-box .input-box::before {
+  content: '';
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  background: #C19240;
+  right: 10px;
+  top: -6px;
+  transform: rotate(45deg);
+}
+
+
+@media (max-width:920px) {
+  nav .navbar {
+    max-width: 100%;
+    padding: 0 25px;
+  }
+
+  nav .navbar .logo a {
+    font-size: 27px;
+  }
+
+  nav .navbar .links li {
+    padding: 0 10px;
+    white-space: nowrap;
+  }
+
+  nav .navbar .links li a {
+    font-size: 15px;
+  }
+}
+
+@media (max-width:800px) {
+  nav {
+    /* position: relative; */
+  }
+
+  .navbar .bx-menu {
+    display: block;
+  }
+
+  nav .navbar .nav-links {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    display: block;
+    max-width: 270px;
+    width: 100%;
+    background: #ffffff;
+    line-height: 40px;
+    padding: 0 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s ease;
+    z-index: 1000;
+  }
+
+  .navbar .nav-links .sidebar-logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .sidebar-logo .logo-name {
+    font-size: 25px;
+    color: #fff;
+  }
+
+  .navbar .bx-menu {
+    font-size: 25px;
+    color: #fff;
+  }
+
+  nav .navbar .links {
+    display: block;
+    margin-top: 20px;
+  }
+
+  nav .navbar .links li .arrow {
+    line-height: 40px;
+  }
+
+  nav .navbar .links li {
+    display: block;
+  }
+
+  nav .navbar .links li .sub-menu {
+    position: relative;
+    top: 0;
+    box-shadow: none;
+    display: none;
+  }
+
+  nav .navbar .links li .sub-menu li {
+    border-bottom: none;
+  }
+
+  .navbar .links li .sub-menu .more-sub-menu {
+    display: none;
+    position: relative;
+    left: 0;
+  }
+
+  .navbar .links li .sub-menu .more-sub-menu li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .links li:hover .htmlcss-arrow,
+  .links li:hover .js-arrow {
+    transform: rotate(0deg);
+  }
+
+  .navbar .links li .sub-menu .more-sub-menu {
+    display: none;
+  }
+
+  .navbar .links li .sub-menu .more span {
+    /* background: red; */
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+  }
+
+  .links li .sub-menu .more:hover .more-sub-menu {
+    display: none;
+  }
+
+  nav .navbar .links li:hover .htmlCss-sub-menu,
+  nav .navbar .links li:hover .js-sub-menu {
+    display: none;
+  }
+
+  .navbar .nav-links.show1 .links .htmlCss-sub-menu,
+  .navbar .nav-links.show3 .links .js-sub-menu,
+  .navbar .nav-links.show2 .links .more .more-sub-menu {
+    display: block;
+  }
+
+  .navbar .nav-links.show1 .links .htmlcss-arrow,
+  .navbar .nav-links.show3 .links .js-arrow {
+    transform: rotate(180deg);
+  }
+
+  .navbar .nav-links.show2 .links .more-arrow {
+    transform: rotate(90deg);
+  }
+}
+
+@media (max-width:370px) {
+  nav .navbar .nav-links {
+    max-width: 100%;
+  }
+}

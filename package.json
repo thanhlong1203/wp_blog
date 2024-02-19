@@ -1,0 +1,21 @@
+{
+  "name": "kato",
+  "version": "1.0.0",
+  "description": "",
+  "main": "postcss.config.js",
+  "dependencies": {
+    "@tailwindcss/line-clamp": "^0.4.4",
+    "postcss-cli": "^8.3.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.15",
+    "postcss": "^8.4.28",
+    "tailwindcss": "^3.3.3"
+  },
+  "scripts": {
+    "watch": "npx postcss ./css/tailwind.css -o ./assets/css/custom.css --watch",
+    "zip": "git archive --format zip --output ./kato.zip main"
+  },
+  "author": "",
+  "license": "ISC"
+}
