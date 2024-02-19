@@ -14,11 +14,10 @@
  */
 
 get_header();
-?>
 
-<?php
 kato_home_page_banner();
 ?>
+
 <main id="primary" class="site-main">
     <?php while (have_posts()) : the_post(); ?>
         <?php get_template_part('template-parts/content', 'page'); ?>
@@ -28,55 +27,50 @@ kato_home_page_banner();
     </div>
     <div class="w-full">
         <?php
+        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
         $query = new WP_Query(array(
-            'posts_per_page' => 2,
+            'posts_per_page' => 1,
             'post_type' => 'movie',
+            'paged' => $paged
         ));
         if ($query->have_posts()) {
         ?>
             <div class="grid grid-cols-2 gap-4">
-
-                <?php
-                while ($query->have_posts()) {
-                    $query->the_post();
-
-                ?>
+                <?php while ($query->have_posts()) {
+                    $query->the_post(); ?>
                     <a href="<?php the_permalink(); ?>">
                         <div class=" mt-8">
                             <p class="text-gray-800">
-                                Tên: <?php echo the_field('ten') ?>
+                                Tên: <?php echo get_field('ten') ?>
                             </p>
                             <img src="<?php echo get_image_featured_path(get_the_ID()); ?>" alt="">
-
                             <p class="text-gray-800">
-                                Thể loại: <?php echo the_field('the_loai') ?>
+                                Thể loại: <?php echo get_field('the_loai') ?>
                             </p>
                             <p class="text-gray-800">
-                                Điểm: <?php echo the_field('diem') ?>
+                                Điểm: <?php echo get_field('diem') ?>
                             </p>
                             <p class="text-gray-800">
-                                Nội dung: <br> <?php echo the_field('noi_dung') ?>
+                                Nội dung: <br> <?php echo get_field('noi_dung') ?>
                             </p>
                         </div>
                     </a>
-                <?php
-                }
-                ?>
+                <?php } ?>
             </div>
 
             <div class="pagination-project">
                 <?php
-                wp_reset_postdata();
                 pmc_pagination($query);
+                // echo paginate_links(array(
+                //     'total' => $query->max_num_pages
+                // ));
                 ?>
             </div>
-        <?php
-        } else {
+        <?php } else {
             echo 'No Results Found';
         }
         ?>
     </div>
 </main>
-</div>
-<?php
-get_footer();
+
+<?php get_footer(); ?>
