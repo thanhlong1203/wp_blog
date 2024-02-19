@@ -29,7 +29,7 @@ kato_home_page_banner();
         <?php
         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
         $query = new WP_Query(array(
-            'posts_per_page' => 1,
+            'posts_per_page' => 2,
             'post_type' => 'movie',
             'paged' => $paged
         ));
@@ -45,7 +45,27 @@ kato_home_page_banner();
                             </p>
                             <img src="<?php echo get_image_featured_path(get_the_ID()); ?>" alt="">
                             <p class="text-gray-800">
-                                Thể loại: <?php echo get_field('the_loai') ?>
+                                Thể loại: <?php $genres  = get_field('the_loai'); // Lấy ID của trường genre
+                                            if (is_array($genres)) {
+                                                $genre_names = array();
+                                                foreach ($genres as $genre_id) {
+                                                    $genre = get_term($genre_id, 'genre'); // Lấy term từ ID và taxonomy là 'genre'
+                                                    if ($genre && !is_wp_error($genre)) {
+                                                        $genre_names[] = $genre->name; // Lưu tên của term vào mảng
+                                                    }
+                                                }
+                                                echo implode(', ', $genre_names); // Hiển thị tên của các term, phân cách bằng dấu phẩy
+                                            } else {
+                                                $genre = get_term($genres, 'genre'); // Lấy term từ ID và taxonomy là 'genre'
+                                                if ($genre && !is_wp_error($genre)) {
+                                                    echo $genre->name; // Hiển thị tên của term
+                                                } else {
+                                                    echo 'Unknown'; // Nếu không có term hoặc có lỗi, hiển thị 'Unknown'
+                                                }
+                                            }
+                                            ?>
+
+
                             </p>
                             <p class="text-gray-800">
                                 Điểm: <?php echo get_field('diem') ?>
